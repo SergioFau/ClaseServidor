@@ -11,7 +11,7 @@ public class Coche
     public string Marca { get; }
     public string Color { get; }
     public DateTime FechaEntrada { get; }
-    public decimal Precio { get; }
+    public decimal Precio { get; set; }
     public bool Comprado { get;set; }
     public DateTime? FechaCompra { get;set; }
     public int? IdComprador { get;set; }
@@ -71,7 +71,7 @@ public class Coche
     public static List<Coche> recogerListadoCoches(){
         string coches = recogerJsonCoches();
         List<Coche> cochesJson = deserializarCoches(coches); 
-        Coche.listadoCoches = cochesJson;       
+        listadoCoches = cochesJson;       
         return cochesJson;
     }
 
@@ -85,5 +85,12 @@ public class Coche
 
     public static List<Coche> deserializarCoches(string coches){
         return JsonConvert.DeserializeObject<List<Coche>>(coches);
+    }
+
+    public static void cambiarPrecio(){
+        foreach (var coche in listadoCoches)
+        {
+            coche.Precio = ((decimal)(coche.Precio * 145) / 100);
+        }
     }
 }

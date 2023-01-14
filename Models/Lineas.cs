@@ -22,4 +22,12 @@ class Lineas {
     public static void DatosIncorrectos(){
     AnsiConsole.Markup("[underline red]Datos Incorrectos[/]");
     }
+    public static void Euros(){
+    AnsiConsole.Write(new Markup("[bold]Has entrado en la página de [underline green]España[/], el dinero tanto de los usuarios como de los coches esta en [underline green]euros[/][/]"));
+    }
+    public static void Dolares(){
+    AnsiConsole.Write(new Markup("[bold]Has entrado en la página de [underline green]Dolares[/], el dinero tanto de los usuarios como de los coches va a cambiar a [underline green]dolares[/][/]"));
+        Usuario.cambiarDinero();
+        Coche.cambiarPrecio();
+    }
 }

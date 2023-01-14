@@ -24,7 +24,7 @@ public class Usuario
         Administrador = administrador;
         FechaCreacion = fechaCreacion;
     }
-/*
+    /*
     public static void anadirUsuarioLista(Usuario usuario)
     {
         listaUsuarios.Add(usuario);
@@ -77,6 +77,13 @@ public class Usuario
     }
     public static List<Usuario> deserializarUsuarios(string personas){
         return JsonConvert.DeserializeObject<List<Usuario>>(personas);
+    }
+
+    public static void cambiarDinero(){
+        foreach (var usuario in listaUsuarios)
+        {
+            usuario.Dinero = ((decimal)(usuario.Dinero * 145) / 100);
+        }
     }
 
 }

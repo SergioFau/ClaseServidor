@@ -12,10 +12,20 @@ try
     List<Usuario> listadoUsuarios = new List<Usuario>();
     listadoUsuarios = Usuario.recogerListadoUsuarios();
     List<Coche> listadoCoches = new List<Coche>();
-    listadoCoches = Coche.recogerListadoCoches();
+    listadoCoches = Coche.recogerListadoCoches();    
     Console.WriteLine("");
     Lineas.Pisoche();
-    Lineas.Bienvenido();
+    var dinero = Environment.GetEnvironmentVariable("dinero");
+    if(dinero == "Euro"){
+        Lineas.Euros();
+    }
+    if(dinero == "Dolar"){
+        Lineas.Dolares();
+    }
+    Console.WriteLine(""); 
+    Lineas.Bienvenido();   
+    Console.WriteLine(""); 
+   
     bool inicioSesion = false;
     string? variableNombre = "";
     string? variableContraseña = "";
@@ -32,12 +42,10 @@ try
         if (inicioSesion)
         {
             Lineas.DatosCorrectos();
-            //Console.WriteLine("Datos Correctos");
         }
         else
         {
             Lineas.DatosIncorrectos();
-            //Console.WriteLine("Datos Incorrectos");
         }
     }
     Console.WriteLine("");
@@ -49,7 +57,8 @@ try
         bool repetir = false; //USAREMOS ESTA VARIABLE PARA VOLVER AL PRINCIPIO CUANDO HAYAMOS AÑADIDO ALGO
         while (repetir == false)
         {
-            Console.WriteLine("Quiere añadir un producto o ver los listados");
+            Console.WriteLine("");
+            Console.WriteLine("Quiere añadir un coche o ver el listado");
             Console.WriteLine("");
             Console.WriteLine("1 - Añadir Coche");
             Console.WriteLine("2 - Ver Listado");
@@ -72,12 +81,14 @@ try
                     Coche cocheanadir = new Coche(listadoCoches.LastOrDefault().Id + 1, marca, color, DateTime.Now, Convert.ToDecimal(precio), false, null, null, Int32.Parse(caballos));
                     listadoCoches.Add(cocheanadir);
                     Console.WriteLine("");
-                    Console.WriteLine("Coche Añadido");
+                    AnsiConsole.Markup("[underline green]Coche añadido[/]");
                     }
                     catch(Exception ex)
                     {                    
+                        AnsiConsole.Markup("[underline red]Ha habido un error a la hora de añadir el coche[/]");
+                        Console.WriteLine("");
                         AnsiConsole.Markup("[underline red]"+ex.Message+"[/]");
-                        LogController.WriteLog(ex.Message);
+                        LogController.WriteLog("Ha habido un error a la hora de añadir el coche: " + ex.Message);
                         Console.WriteLine("");
                     }     
                    
@@ -104,7 +115,7 @@ try
                 }*/
                 Menu.ListadoCoches();
                 Console.WriteLine("");
-                Console.WriteLine("Si quiere ver los detalles del coche, indique el id del coche");
+                Console.WriteLine("Si quiere ver los detalles del coche, indique el Id del coche");
                 Console.WriteLine("Si quiere filtrar pulsa 0");
                 string numeroListadoCoche = "0";
                 numeroListadoCoche = Console.ReadLine();
