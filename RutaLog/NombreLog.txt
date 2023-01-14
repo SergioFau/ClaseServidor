@@ -1,2 +1,4 @@
 Input string was not in a correct format.13/01/2023 17:03:42->Input string was not in a correct format.13/01/2023 17:08:32->Input string was not in a correct format.
 13/01/2023 17:09:07->Input string was not in a correct format.
+13/01/2023 19:15:01->Object reference not set to an instance of an object.13/01/2023 19:15:11->Object reference not set to an instance of an object.13/01/2023 19:16:34->Object reference not set to an instance of an object.13/01/2023 19:17:29->Object reference not set to an instance of an object.14/01/2023 11:19:08->Input string was not in a correct format.14/01/2023 11:38:06->Input string was not in a correct format.
+14/01/2023 11:39:14->Input string was not in a correct format.

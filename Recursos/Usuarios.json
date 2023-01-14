@@ -1,0 +1,1 @@
+[{"Id":1,"Nombre":"Sergio","Contraseña":"123","Dinero":1000000.0,"Administrador":true,"FechaCreacion":"2023-01-13T18:24:22.7638385+01:00"},{"Id":1,"Nombre":"Alex","Contraseña":"456","Dinero":50000.0,"Administrador":false,"FechaCreacion":"2023-01-13T18:24:22.7812694+01:00"}]

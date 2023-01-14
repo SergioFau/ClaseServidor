@@ -1,5 +1,7 @@
 # Nos fijamos en el csproj con el net
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+#ARG variableEntorno1 
+#ENV variable_entorno2 $variableEntorno1
 WORKDIR /App
 
 # Copy everything

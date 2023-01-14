@@ -13,7 +13,8 @@ public class LogController
         message = DateTime.Now.ToString() + "->" + message;
         sb.Append(message);
         try
-        {            
+        {           
+        sb.Append("\n"); 
         File.AppendAllText("C:\\Users\\sergiofau\\Desktop\\CosasSergio\\ClaseServidor\\RutaLog\\NombreLog.txt", sb.ToString());
         sb.Append("\n");
         sb.Clear();
